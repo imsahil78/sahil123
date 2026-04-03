@@ -12,6 +12,8 @@ FEATURES
   * Rename file
   * Overwrite content
   * Append data
+
+* Delete file
 * Display all files and folders
 
 TECHNOLOGIES USED
@@ -26,6 +28,7 @@ When you run the program, you will see:
 press 1 for creating a file
 press 2 for reading a file
 press 3 for updating a file
+press 4 for deleting a file
 
 1. CREATE FILE
 
@@ -43,6 +46,12 @@ press 3 for updating a file
 * Rename file
 * Overwrite data
 * Append data
+
+4. Delete file
+
+* Enter file name
+* The file will get deleted
+
 
 PROJECT STRUCTURE
 
