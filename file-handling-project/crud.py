@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 def readfileandfolder():
     path = Path('')
@@ -55,13 +56,13 @@ def updatefile():
                 p.replace(p2)
                 print("File Renamed Successfully :)")
 
-            if res == 2:
+            elif res == 2:
                 with open(p, "w") as fs:
                     data = input("enter the data you want to overwrite: ")
                     fs.write(data)
                 print("File Overwritten Successfully :)")
 
-            if res == 3:
+            elif res == 3:
                 with open(p, 'a') as fs:
                     data = input("write append data: ")
                     fs.write(" " + data)
@@ -71,10 +72,24 @@ def updatefile():
     except Exception as err:
         print(f"the error occured as {err}")
 
+def deletefile() :
+    readfileandfolder()
+    name = input("enter file you want to delete")
+    p = Path(name)
+    try :
+        if p.exists() and p.is_file() :
+            os.remove(p)
+            print("file deleted sucessfully :")
+        else :
+            print("no such file exist")
 
-print("press 1 for creating a file")
-print("press 2 for reading a file")
-print("press 3 for updating a file")
+    except Exception as err :
+        print(f"the error occured as {err}")
+
+print("press 1 for creating a file ")
+print("press 2 for reading a file ")
+print("press 3 for updating a file ")
+print("press 4 for deleting a file ")
 
 check = int(input("Enter your choice: "))
 
@@ -84,5 +99,7 @@ elif check == 2:
     readfile()
 elif check == 3:
     updatefile()
+elif check == 4:
+    deletefile()
 else:
     print("Invalid Choice")
